@@ -8,6 +8,23 @@ def build_web_page(hash)
     return "<html>\n" + head + body(navbar, card_gen(hash)) + "</html>"
 end
 
+def photos_count(hash)
+    result = {}
+
+    hash["photos"].each do |photo|
+        if result.has_key?(photo["camera"]["full_name"])
+            result[photo["camera"]["full_name"]] += 1
+        else
+            result[photo["camera"]["full_name"]] = 1
+        end
+    end
+
+    return result
+end
+
+
 data = request(api_address, api_key)
+
+puts photos_count(data)
 
 File.write("index.html", build_web_page(data))
