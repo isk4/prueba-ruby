@@ -11,15 +11,18 @@ def head
     )
 end
 
-def body(content)
+def body(navbar, content)
     return (
-        "\t<body>\n" +
+        "\t<body style='padding-top: 56px'>\n" +
+        navbar +
+        "\t\t<main>\n" +
         content +
-        "\t\t<!-- Optional JavaScript -->
-            <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-            <script src='https://code.jquery.com/jquery-3.5.1.slim.min.js' integrity='sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj' crossorigin='anonymous'></script>
-            <script src='https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js' integrity='sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN' crossorigin='anonymous'></script>
-            <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js' integrity='sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV' crossorigin='anonymous'></script>
+        "\t\t</main>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src='https://code.jquery.com/jquery-3.5.1.slim.min.js' integrity='sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj' crossorigin='anonymous'></script>
+        <script src='https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js' integrity='sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN' crossorigin='anonymous'></script>
+        <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js' integrity='sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV' crossorigin='anonymous'></script>
     </body>\n"
     )
 end
@@ -42,4 +45,23 @@ def navbar
             </div>
         </nav>\n"
     )
+end
+
+def card_gen(hash)
+    cards = "\t\t\t<div class='row row-cols-1 row-cols-md-3'>\n"
+
+    hash["photos"].each do |photo|
+        cards += 
+        "\t\t\t\t<div class='card h-100' style='width: 18rem;'>
+                    <img src='#{photo['img_src']}' class='card-img-top' alt=#{photo["id"]}>
+                    <div class='card-body'>
+                        <h5 class='card-title'>ID: #{photo["id"]}</h5>
+                        <p class='card-text'>Taken with: #{photo["camera"]["full_name"]}</p>
+                    </div>
+                </div>\n"
+    end
+
+    cards += "\t\t\t</div>\n"
+
+    return cards
 end

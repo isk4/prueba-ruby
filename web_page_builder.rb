@@ -4,8 +4,10 @@ require_relative 'components'
 api_address = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=666&api_key="
 api_key = "B9038ToX0u4qHgFC6VdEOos65TANfKXGgHuyh3GU"
 
-def build_web_page
-    return "<html>\n" + head + body(navbar + "<h1>Prueba</h1>\n") + "</html>"
+def build_web_page(hash)
+    return "<html>\n" + head + body(navbar, card_gen(hash)) + "</html>"
 end
 
-File.write("index.html", build_web_page)
+data = request(api_address, api_key)
+
+File.write("index.html", build_web_page(data))
