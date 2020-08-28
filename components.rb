@@ -52,11 +52,13 @@ def card_gen(hash)
 
     hash["photos"].each do |photo|
         cards += 
-        "\t\t\t\t<div class='card h-100' style='width: 18rem;'>
-                    <img src='#{photo['img_src']}' class='card-img-top' alt=#{photo["id"]}>
-                    <div class='card-body'>
-                        <h5 class='card-title'>ID: #{photo["id"]}</h5>
-                        <p class='card-text'>Taken with: #{photo["camera"]["full_name"]}</p>
+        "\t\t\t\t<div class='col'>
+                    <div class='card h-100'>
+                        <img src='#{photo['img_src']}' class='card-img-top' alt=#{photo["id"]}>
+                        <div class='card-body'>
+                            <h5 class='card-title'>ID: #{photo["id"]}</h5>
+                            <p class='card-text'>Taken with: #{photo["camera"]["full_name"]}</p>
+                        </div>
                     </div>
                 </div>\n"
     end
