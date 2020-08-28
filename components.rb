@@ -54,7 +54,7 @@ def card_gen(hash)
         cards += 
         "\t\t\t\t<div class='col'>
                     <div class='card h-100'>
-                        <img src='#{photo['img_src']}' class='card-img-top' alt=#{photo["id"]}>
+                        <a target='_blank' href='#{photo['img_src']}'><img src='#{photo['img_src']}' class='card-img-top' alt=#{photo["id"]}></a>
                         <div class='card-body'>
                             <h5 class='card-title'>ID: #{photo["id"]}</h5>
                             <p class='card-text'>Taken with: #{photo["camera"]["full_name"]}</p>
