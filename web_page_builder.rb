@@ -5,7 +5,7 @@ api_address = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?s
 api_key = "B9038ToX0u4qHgFC6VdEOos65TANfKXGgHuyh3GU"
 
 def build_web_page(hash)
-    return "<html>\n" + head + body(navbar, card_gen(hash)) + "</html>"
+    return "<!DOCTYPE html>\n<html>\n" + head + body(navbar, card_gen(hash)) + "</html>"
 end
 
 def photos_count(hash)
