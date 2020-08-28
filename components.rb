@@ -37,9 +37,9 @@ def navbar
                 </button>
                 <div class='collapse navbar-collapse' id='navbarNavAltMarkup'>
                     <div class='navbar-nav ml-auto'>
-                        <a class='nav-link' href='https://github.com/chrisccerami/mars-photo-api'>API Documentation<span class='sr-only'>(current)</span></a>
-                        <a class='nav-link' href='https://github.com/chrisccerami'>API's Creator Github</a>
-                        <a class='nav-link' href='https://api.nasa.gov/'>Other NASA APIs</a>
+                        <a class='nav-link' target='_blank' href='https://github.com/chrisccerami/mars-photo-api'>API Documentation<span class='sr-only'>(current)</span></a>
+                        <a class='nav-link' target='_blank' href='https://github.com/chrisccerami'>API's Creator Github</a>
+                        <a class='nav-link' target='_blank' href='https://api.nasa.gov/'>Other NASA APIs</a>
                     </div>
                 </div>
             </div>
