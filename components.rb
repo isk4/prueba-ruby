@@ -38,7 +38,6 @@ def navbar
                 <div class='collapse navbar-collapse' id='navbarNavAltMarkup'>
                     <div class='navbar-nav ml-auto'>
                         <a class='nav-link text-light' target='_blank' href='https://github.com/chrisccerami/mars-photo-api'>API Documentation<span class='sr-only'>(current)</span></a>
-                        <a class='nav-link text-light' target='_blank' href='https://github.com/chrisccerami'>API's Creator Github</a>
                         <a class='nav-link text-light' target='_blank' href='https://api.nasa.gov/'>Other NASA APIs</a>
                     </div>
                 </div>
